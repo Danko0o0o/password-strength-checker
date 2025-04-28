@@ -25,11 +25,11 @@ function updateStrengthUI(result) {
     crackTime.textContent = `Estimated crack time: ${result.crack_times_display.offline_slow_hashing_1e4_per_second}`;
 
     if (result.feedback.suggestions.length > 0) {
-        feedback.textContent = result.feedback.suggestions.join(' ');
+        feedback.textContent = result.feedback.suggestions.join(' ') + ' Consider using a password manager to help create and store strong passwords.';
     } else if (result.feedback.warning) {
-        feedback.textContent = result.feedback.warning;
+        feedback.textContent = result.feedback.warning + ' Using a password manager can improve security without burdening your memory.';
     } else {
-        feedback.textContent = 'Strong password!';
+        feedback.textContent = 'Strong password! Remember, using a password manager ensures every account has a unique strong password.';
     }
 }
 

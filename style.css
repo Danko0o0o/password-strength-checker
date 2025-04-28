@@ -59,3 +59,18 @@ input[type="password"] {
     font-size: 0.9rem;
     color: #777;
 }
+
+.educational {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.educational h2, .educational h3 {
+    color: #2c3e50;
+}
+
+.educational p {
+    margin: 10px 0;
+}
