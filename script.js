@@ -24,6 +24,16 @@ function updateStrengthUI(result) {
 
     crackTime.textContent = `Estimated crack time: ${result.crack_times_display.offline_slow_hashing_1e4_per_second}`;
 
+    const superCommonPasswords = [
+        '123456', 'password', '123456789', '12345678', '12345', 'qwerty', 
+        'abc123', '111111', '123123', 'password1'
+    ];
+    // Check if password is extremely common
+    if (superCommonPasswords.includes(passwordInput.value.trim())) {
+        feedback.textContent = 'This is one of the most common passwords and can be cracked instantly! Please choose something much stronger or use a password manager.';
+        return;
+    }
+
     if (result.feedback.suggestions.length > 0) {
         feedback.textContent = result.feedback.suggestions.join(' ') + ' Consider using a password manager to help create and store strong passwords.';
     } else if (result.feedback.warning) {
